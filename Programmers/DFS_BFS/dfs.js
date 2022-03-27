@@ -11,6 +11,7 @@ const graph = {
   J: ["I"],
 };
 
+// Stack으로 구현
 const dfs = (graph, startNode) => {
   const visited = [];
   let needVisit = [];

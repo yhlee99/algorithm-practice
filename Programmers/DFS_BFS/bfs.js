@@ -11,6 +11,7 @@ const graph = {
   J: ["I"],
 };
 
+// Queue로 구현
 const bfs = (graph, startNode) => {
   const visited = [];
   let needVisit = [];
