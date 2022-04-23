@@ -1,19 +1,18 @@
 function solution(participant, completion) {
-  let testObject = new Object();
+  const map = new Map();
 
-  completion.forEach((value) => {
-    testObject[value] = -1;
+  participant.map((v) => {
+    map.set(v, (map.get(v) || 0) + 1);
   });
 
-  let result = participant.filter(
-    (value) => !Object.keys(testObject).includes(value)
-  );
+  completion.map((v) => {
+    if (map.get(v) > 1) {
+      map.set(v, map.get(v) - 1);
+    } else {
+      map.delete(v);
+    }
+  });
 
-  return result[0];
+  const answer = [...map.keys()][0];
+  return answer;
 }
-
-// 출력 예
-// participant	completion	return
-// ["leo", "kiki", "eden"]	["eden", "kiki"]	"leo"
-// ["marina", "josipa", "nikola", "vinko", "filipa"]	["josipa", "filipa", "marina", "nikola"]	"vinko"
-// ["mislav", "stanko", "mislav", "ana"]	["stanko", "ana", "mislav"]	"mislav"
