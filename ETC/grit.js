@@ -8,4 +8,4 @@ function solution(a) {
   return answer;
 }
 
-a([0, 1, 2, 3, 4, 5, 7, 8, 9]);
+console.log(a([0, 1, 2, 3, 4, 5, 7, 8, 9]));
